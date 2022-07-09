@@ -40,7 +40,9 @@ def help(update, context):
     update.message.reply_text('Mövcud əmrlər:\n' +
                               '/Game - Yeni oyun başlat\n' +
                               '/master - Aparıcı olmaq\n' +
-                              '/rating - Qrup üzrə reytinq', reply_to_message_id=True)
+                              '/rating - Qrup üzrə reytinq',
+                        '/gstats - Qlobal reytinq',       
+                             reply_to_message_id=True)
 
 
 def button(update, context):
@@ -66,10 +68,10 @@ def button(update, context):
 def command_start(update, context: CallbackContext):
     if update.effective_chat.type == "private":
         
-        addme = InlineKeyboardButton(text="🧚 Qrupa əlavə edin!", url="https://t.me/Rahid_Crocodile_Bot?startgroup=a")
-        sohbet = InlineKeyboardButton(text="💬 Oyun Qrupu", url="https://t.me/Dark_Region")
-        oyun = InlineKeyboardButton(text="🤖 Botlar", url="https://t.me/Rahid_44")
-        admin = InlineKeyboardButton(text="👨🏻‍💻 Sahib", url="https://t.me/Rahid_2003")
+        addme = InlineKeyboardButton(text="🧚 Qrupa əlavə edin!", url="https://t.me/LacosteGameAzBot?startgroup=a")
+        sohbet = InlineKeyboardButton(text="🌐 Dəstək Qrupu", url="https://t.me/LacosteSup")
+        oyun = InlineKeyboardButton(text="🤖 Botlar", url="https://t.me/LacosteSup")
+        admin = InlineKeyboardButton(text="👨🏻‍💻 Sahib", url="https://t.me/Axhmedov")
 
         keyboard = [[addme],[sohbet],[oyun],[admin]]
         reply_markup = InlineKeyboardMarkup(keyboard)
@@ -240,6 +242,7 @@ def main():
     dp.add_handler(CommandHandler("rating", command_rating))
     dp.add_handler(CommandHandler("help", help))
     dp.add_handler(CommandHandler("start", command_start))
+    dp.add_handler(CommandHandler("Gstats", command_Qlobal reytinq))
 
     dp.add_handler(CallbackQueryHandler(button))
 
